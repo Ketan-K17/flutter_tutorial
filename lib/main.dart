@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:wallpaper_ai/pages/first_page.dart';
-import 'package:wallpaper_ai/pages/second_page.dart';
+import 'package:wallpaper_ai/pages/home.dart';
+import 'package:wallpaper_ai/pages/settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => FirstPage(),
-        "/secondpage": (context) => SecondPage(),
+        "/home": (context) => HomePage(),
+        "/settings": (context) => SettingsPage(),
       },
     );
   }
