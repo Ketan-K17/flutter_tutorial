@@ -9,29 +9,28 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  List names = [
-    "Nate",
-    "John",
-    "Jane",
-    "Jim",
-    "Jill",
-    "Jack",
-    "Jill",
-    "Jim",
-    "Jane",
-    "John",
-    "Nate",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
-        body: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: (context, index) => ListTile(title: Text(names[index])),
+        body: GridView.builder(
+          // grid delegate is used to define the number of items in a row. Nothing too fancy.
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 8,
+          ),
+          itemCount: 64,
+          itemBuilder: (context, index) {
+            int row = index ~/ 8;
+            int col = index % 8;
+            bool isBlack = (row % 2 == 0) ? (col % 2 == 0) : (col % 2 != 0);
+            return Container(
+              width: 100,
+              height: 100,
+              color: isBlack ? Colors.black : Colors.white,
+            );
+          },
         ),
       ),
     );
