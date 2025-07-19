@@ -15,17 +15,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
-        body: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        body: ListView(
           children: [
             // box1
-            Expanded(child: Container(color: Colors.blue[800])),
+            Container(height: 400, color: Colors.blue[800]),
             // box2
-            Expanded(flex: 2, child: Container(color: Colors.blue[400])),
-            // box3
-            // Container(height: 100, width: 100, color: Colors.blue[600]),
-            Expanded(flex: 4, child: Container(color: Colors.blue[200])),
+            Container(height: 400, color: Colors.blue[400]),
+            // box3 (won't fit because containers are too large. Use ListView here to make containers scrollable.)
+            Container(height: 400, color: Colors.blue[200]),
           ],
         ),
       ),
