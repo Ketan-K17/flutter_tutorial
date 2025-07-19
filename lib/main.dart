@@ -9,22 +9,29 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
+  List names = [
+    "Nate",
+    "John",
+    "Jane",
+    "Jim",
+    "Jill",
+    "Jack",
+    "Jill",
+    "Jim",
+    "Jane",
+    "John",
+    "Nate",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            // box1
-            Container(width: 400, color: Colors.blue[800]),
-            // box2
-            Container(width: 400, color: Colors.blue[400]),
-            // box3 (won't fit because containers are too large. Use ListView here to make containers scrollable.)
-            Container(width: 400, color: Colors.blue[200]),
-          ],
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) => ListTile(title: Text(names[index])),
         ),
       ),
     );
