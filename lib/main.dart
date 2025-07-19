@@ -15,22 +15,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
-        body: GridView.builder(
-          // grid delegate is used to define the number of items in a row. Nothing too fancy.
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 8,
-          ),
-          itemCount: 64,
-          itemBuilder: (context, index) {
-            int row = index ~/ 8;
-            int col = index % 8;
-            bool isBlack = (row % 2 == 0) ? (col % 2 == 0) : (col % 2 != 0);
-            return Container(
-              width: 100,
-              height: 100,
-              color: isBlack ? Colors.black : Colors.white,
-            );
-          },
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            // big box
+            Container(height: 300, width: 300, color: Colors.blue[100]),
+            // medium box
+            Container(height: 200, width: 200, color: Colors.blue[300]),
+            // small box
+            Container(height: 100, width: 100, color: Colors.blue[600]),
+          ],
         ),
       ),
     );
