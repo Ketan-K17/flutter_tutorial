@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
             // box1
             Expanded(child: Container(color: Colors.blue[800])),
             // box2
-            Expanded(child: Container(color: Colors.blue[400])),
+            Expanded(flex: 2, child: Container(color: Colors.blue[400])),
             // box3
             // Container(height: 100, width: 100, color: Colors.blue[600]),
-            Expanded(child: Container(color: Colors.blue[200])),
+            Expanded(flex: 4, child: Container(color: Colors.blue[200])),
           ],
         ),
       ),
