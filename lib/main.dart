@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wallpaper_ai/pages/first_page.dart';
 import 'package:wallpaper_ai/pages/home.dart';
 import 'package:wallpaper_ai/pages/settings.dart';
+import 'package:wallpaper_ai/pages/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => FirstPage(),
         "/home": (context) => HomePage(),
         "/settings": (context) => SettingsPage(),
+        "/profile": (context) => ProfilePage(),
       },
     );
   }
