@@ -9,6 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
+  // functions/methods
+  void UserTapped() {
+    print("Tap");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,19 +21,20 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.blue,
         body: Center(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // big box
-              Container(height: 300, width: 300, color: Colors.blue[100]),
-              // medium box
-              Container(height: 200, width: 200, color: Colors.blue[300]),
-              // small box
-              Container(height: 100, width: 100, color: Colors.blue[600]),
-            ],
+          // put a gesture detector on any widget to make it responsive to your touch.
+          child: GestureDetector(
+            onTap: UserTapped,
+            child: Container(
+              height: 300,
+              width: 300,
+              color: Colors.blue[100],
+              child: Center(child: Text("Tap Me!")),
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+// PRO TIP: go to a container, press cmd + . to get the lightbulb menu. Super handy.
