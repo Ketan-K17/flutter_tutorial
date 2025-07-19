@@ -16,13 +16,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.blue,
         body: ListView(
+          scrollDirection: Axis.horizontal,
           children: [
             // box1
-            Container(height: 400, color: Colors.blue[800]),
+            Container(width: 400, color: Colors.blue[800]),
             // box2
-            Container(height: 400, color: Colors.blue[400]),
+            Container(width: 400, color: Colors.blue[400]),
             // box3 (won't fit because containers are too large. Use ListView here to make containers scrollable.)
-            Container(height: 400, color: Colors.blue[200]),
+            Container(width: 400, color: Colors.blue[200]),
           ],
         ),
       ),
