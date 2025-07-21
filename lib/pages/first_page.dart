@@ -9,6 +9,7 @@ class FirstPage extends StatefulWidget {
   State<FirstPage> createState() => _FirstPageState();
 }
 
+// class that represents the state of this particular page.
 class _FirstPageState extends State<FirstPage> {
   // list of pages in our app.
   final List<Widget> _pages = [HomePage(), SettingsPage(), ProfilePage()];
